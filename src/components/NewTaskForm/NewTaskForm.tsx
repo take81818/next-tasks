@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 
 const NewTaskForm = () => {
     const router = useRouter();
-    const handleSubmit = async (e:any)=>{
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
-        const form = e.target;
+        const form = e.currentTarget; 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         const allData = {...data,completed:false}

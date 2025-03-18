@@ -4,6 +4,7 @@ import { updateTask,getTodo } from "../../../utils/supabaseFunctions";
 import { useRouter } from "next/navigation";
 import { useState,useEffect } from "react";
 import { NotIdTodo } from "../../../utils/interface";
+import { FormEvent } from "react";
 
 type id = {
   id:string
@@ -11,9 +12,9 @@ type id = {
 
 const EditTaskForm = ({id}:id) => {
     const router = useRouter();
-        const handleSubmit = async (e:any)=>{
-            e.preventDefault();
-            const form = e.target;
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+      e.preventDefault();
+      const form = e.currentTarget; 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             let updateData = {}
