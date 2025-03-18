@@ -1,0 +1,21 @@
+import SideMenu from '@/components/SideMenu/SideMenu';
+import React from 'react'
+
+const layout = ({
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) => {
+  return (
+    <div className='flex h-screen'>
+        <div className='bg-indigo-300'>
+            <SideMenu/>
+        </div>
+        <main className='bg-slate-50 flex-1 overflow-auto'>
+            {children}
+        </main>
+    </div>
+  )
+}
+
+export default layout
