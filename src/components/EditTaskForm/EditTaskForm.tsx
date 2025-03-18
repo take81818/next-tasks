@@ -4,7 +4,6 @@ import { updateTask,getTodo } from "../../../utils/supabaseFunctions";
 import { useRouter } from "next/navigation";
 import { useState,useEffect } from "react";
 import { NotIdTodo } from "../../../utils/interface";
-import { FormEvent } from "react";
 
 type id = {
   id:string
